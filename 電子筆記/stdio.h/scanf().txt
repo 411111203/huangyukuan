@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    int x;
+    printf("請輸入一個數字：");
+    scanf("%d", &x);
+    printf("你輸入的數字是：%d\n", x);
+}
+
+scanf()就是在讀取輸入我們輸入的東西
+上面的程式功能是讀取輸入提供著輸入的東西，然後將輸入的字印出來

@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main() {
+    printf("Hello World!\n");
+}
+
+printf()功能是印出格式化的字串
+上面程式的功能就是在印出"Hello World"
