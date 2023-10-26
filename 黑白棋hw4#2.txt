@@ -1,0 +1,88 @@
+#include<stdio.h>
+int cheese[8][8]={{0,0,0,0,0,0,0,0},
+                  {0,0,0,0,0,0,0,0},
+                  {0,0,2,2,2,0,0,0},
+                  {0,0,0,1,2,0,0,0},
+                  {0,0,0,2,1,0,0,0},
+                  {0,0,0,0,0,0,0,0},
+                  {0,0,0,0,0,0,0,0},
+                  {0,0,0,0,0,0,0,0}};
+int cheesemove(int x,int y,int dx,int dy,int cheese[8][8])
+{
+    if(cheese[x][y]==0){
+        return 0;
+    }
+    else if(cheese[x][y]==1){
+        if(cheese[x+dx][y+dy]==2&&(dx!=0||dy!=0)){
+            for(int e=1;e<8;e++){
+                if(x+e*dx >= 0 && x+e*dx < 8 && y+e*dy >= 0 && y+e*dy < 8 &&cheese[x+dx*e][y+dy*e]==0&&cheese[x+(e-1)*dx][y+(e-1)*dy]==2){
+                    return e;
+                }
+            }
+        }
+    }
+    else if(cheese[x][y]==2){
+        if(cheese[x+dx][y+dy]==1&&(dx!=0||dy!=0)){
+            for(int r=1;r<8;r++){
+                if(x+r*dx >= 0 && x+r*dx < 8 && y+r*dy >= 0 && y+r*dy < 8 &&cheese[x+r*dx][y+r*dy]==0&&cheese[x+(r-1)*dx][y+(r-1)*dy]==1){
+                    return r;
+                }
+            }
+        }
+    }
+    return 0;
+}
+int cheak2(int i,int j,int color)
+{
+    if(cheese[i][j]==1&&color==1){
+        for(int dx=-1;dx<=1;dx++){
+            for(int dy=-1;dy<=1;dy++){
+                int move=cheesemove(i,j,dx,dy,cheese);
+                if(move>0){
+                printf("(%d,%d) ",i+move*dx,j+move*dy);
+                }
+            }
+        }
+    }
+    else if(cheese[i][j]==2&&color==2){
+        for(int dx=-1;dx<=1;dx++){
+                for(int dy=-1;dy<=1;dy++){
+                int move=cheesemove(i,j,dx,dy,cheese);
+                if(move>0){
+                printf("(%d,%d) ",i+move*dx,j+move*dy);
+                }
+            }
+        }
+    }
+}
+int cheak(int color){
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++){
+            cheak2(i,j,color);
+        }
+    }
+}
+int main()
+{
+    int x,y;
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++){
+            printf("%d ",cheese[i][j]);
+        }
+        printf("\n");
+    }
+    scanf("%d%d",&x,&y);
+
+    for(int dx=-1;dx<=1;dx++){
+        for(int dy=-1;dy<=1;dy++){
+            int move=cheesemove(x,y,dx,dy,cheese);
+            if(move>0){
+            printf("距離(%d,%d)有%d步\n",x+move*dx,y+move*dy,move);
+            }
+        }
+    }
+    printf("黑棋可以下的\n");
+    cheak(1);
+    printf("\n白旗可以下的\n");
+    cheak(2);
+}
