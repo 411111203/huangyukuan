@@ -1,0 +1,277 @@
+#include<stdio.h>
+int cheese[8][8]={{0,0,0,0,0,0,0,0},
+                  {0,0,0,0,0,0,0,0},
+                  {0,0,0,0,0,0,0,0},
+                  {0,0,0,2,1,0,0,0},
+                  {0,0,0,1,2,0,0,0},
+                  {0,0,0,0,0,0,0,0},
+                  {0,0,0,0,0,0,0,0},
+                  {0,0,0,0,0,0,0,0}};
+int cheesemove(int x,int y,int dx,int dy,int cheese[8][8])
+{
+    if(cheese[x][y]==0){
+        return 0;
+    }
+    else if(cheese[x][y]==1){
+        if(cheese[x+dx][y+dy]==2&&(dx!=0||dy!=0)){
+            for(int e=1;e<8;e++){
+                if(x+e*dx >= 0 && x+e*dx < 8 && y+e*dy >= 0 && y+e*dy < 8 &&cheese[x+dx*e][y+dy*e]==0&&cheese[x+(e-1)*dx][y+(e-1)*dy]==2){
+                    return e;
+                }
+            }
+            return 0;
+        }
+    }
+    else if(cheese[x][y]==2){
+        if(cheese[x+dx][y+dy]==1&&(dx!=0||dy!=0)){
+            for(int r=1;r<8;r++){
+                if(x+r*dx >= 0 && x+r*dx < 8 && y+r*dy >= 0 && y+r*dy < 8 &&cheese[x+r*dx][y+r*dy]==0&&cheese[x+(r-1)*dx][y+(r-1)*dy]==1){
+                    return r;
+                }
+            }
+            return 0;
+        }
+    }
+    return 0;
+}
+int cheak2(int i,int j,int color)
+{
+    int step=0;
+    if(cheese[i][j]==1&&color==1){
+        for(int dx=-1;dx<=1;dx++){
+            for(int dy=-1;dy<=1;dy++){
+                int move=cheesemove(i,j,dx,dy,cheese);
+                if(move>0){
+                    printf("(%d,%d) ",i+move*dx,j+move*dy);
+                    step++;
+                }
+            }
+        }
+        return step;
+    }
+    else if(cheese[i][j]==2&&color==2){
+        for(int dx=-1;dx<=1;dx++){
+            for(int dy=-1;dy<=1;dy++){
+                int move=cheesemove(i,j,dx,dy,cheese);
+                if(move>0){
+                    printf("(%d,%d) ",i+move*dx,j+move*dy);
+                    step++;
+                }
+            }
+        }
+        return step;
+    }
+    else if(cheese[i][j]==1&&color==3){
+        for(int dx=-1;dx<=1;dx++){
+            for(int dy=-1;dy<=1;dy++){
+                int move=cheesemove(i,j,dx,dy,cheese);
+                if(move>0){
+                    step++;
+                }
+            }
+        }
+        return step;
+    }
+    else if((cheese[i][j]==0||cheese[i][j]==2)&&color==3){
+        return step;
+    }
+
+}
+int cheak(int color){
+    int zero=0;
+    int not_step=0;
+    if(color==1||color==2){
+        for(int i=0;i<8;i++){
+            for(int j=0;j<8;j++){
+                cheak2(i,j,color);
+            }
+        }
+    }
+    else if(color==3){
+        for(int i=0;i<8;i++){
+            for(int j=0;j<8;j++){
+                if(cheese[i][j]!=0){
+                    zero++;
+                }
+                if(zero==64){
+                    return 0;
+                }
+                if(cheak2(i,j,color)==0){
+                    not_step++;
+                }
+            }
+        }
+        if(not_step==64){
+            return 0;
+        }
+    return 1;
+    }
+}
+int overturn(int x,int y,int cheese[8][8],int color)
+{
+    int z=0;
+    for(int dx=-1;dx<=1;dx++){
+        for(int dy=-1;dy<=1;dy++){
+            if(color==1&&cheese[x+dx][y+dy]==2&&(dx!=0||dy!=0)){
+                for(int e=1;e<8;e++){
+                    if(cheese[x+e*dx][y+e*dy]==2&&cheese[x+(e+1)*dx][y+(e+1)*dy]==1){
+                        for(int w=1;w<e+1;w++){
+                        cheese[x+w*dx][y+w*dy]=1;
+                        }
+                        break;
+                    }
+                }
+            }
+            else if(color==2&&cheese[x+dx][y+dy]==1&&(dx!=0||dy!=0)){
+                for(int e=1;e<8;e++){
+                    if(cheese[x+e*dx][y+e*dy]==1&&cheese[x+(e+1)*dx][y+(e+1)*dy]==2){
+                        for(int w=1;w<e+1;w++){
+                        cheese[x+w*dx][y+w*dy]=2;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+}
+int overturn_2(int x,int y,int cheese[8][8],int color)
+{
+    int z=0;
+    for(int dx=-1;dx<=1;dx++){
+        for(int dy=-1;dy<=1;dy++){
+           if(color==2&&cheese[x+dx][y+dy]==1&&(dx!=0||dy!=0)){
+                for(int e=1;e<8;e++){
+                    if(cheese[x+e*dx][y+e*dy]==1&&cheese[x+(e+1)*dx][y+(e+1)*dy]==2){
+                            z=z+e;
+                            break;
+                    }
+                }
+            }
+            else if(color==1&&cheese[x+dx][y+dy]==2&&(dx!=0||dy!=0)){
+                for(int e=1;e<8;e++){
+                    if(cheese[x+e*dx][y+e*dy]==2&&cheese[x+(e+1)*dx][y+(e+1)*dy]==1){
+                            z=z+e;
+                            break;
+                    }
+                }
+            }
+        }
+    }
+    return z;
+}
+int computer(int cheese[8][8])
+{
+    int max_z=0;
+    int move_x=-1;
+    int move_y=-1;
+    for(int i=0;i<8;i++){
+        for(int j=0;j<8;j++){
+            if(cheese[i][j] == 2){
+                for(int dx = -1; dx <= 1; dx++){
+                    for(int dy = -1; dy <= 1; dy++){
+                        int move=cheesemove(i,j,dx,dy,cheese);
+                        if(move>0){
+                            int w=i+move*dx;
+                            int x=j+move*dy;
+                            int z=overturn_2(w,x,cheese,2);
+                            if(z>max_z){
+                                max_z=z;
+                                move_x=w;
+                                move_y=x;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if(max_z>0){
+        cheese[move_x][move_y]=2;
+        overturn(move_x,move_y,cheese,2);
+        printf("\n2 電腦白旗下 ");
+        printf(" %d %d\n白棋翻轉數 : %d\n",move_x,move_y,max_z);
+        return 1;
+    }
+    else{
+        printf("白棋無地方可下，換黑棋\n");
+        return 0;
+    }
+}
+int main()
+{
+    int x,y;
+    while(1){
+        if(cheak(3)!=0){
+            printf("1 黑棋你下\n");
+            for(int i=0;i<8;i++){
+                for(int j=0;j<8;j++){
+                    printf("%d ",cheese[i][j]);
+                }
+                printf("\n");
+            }
+            printf("黑棋可以下的 ");
+            cheak(1);
+            printf("\n請下合法的位置 x y\n");
+            int g=0;
+            while(g==0){
+                scanf("%d%d",&x,&y);
+                if(overturn_2(x,y,cheese,1)>0){
+                    g++;
+                }
+                else{
+                    printf("請輸入正確位置\n");
+                }
+            }
+            cheese[x][y]=1;
+            printf("黑棋翻轉數 : %d\n",overturn_2(x,y,cheese,1));
+            overturn(x,y,cheese,1);
+            for(int i=0;i<8;i++){
+                for(int j=0;j<8;j++){
+                    printf("%d ",cheese[i][j]);
+                }
+                printf("\n");
+            }
+        }
+        else{
+            printf("黑棋無地方可下，換白棋\n");
+        }
+        if(computer(cheese)==0){
+            if(cheak(3)==0){
+                printf("兩方都無法下\n");
+                for(int i=0;i<8;i++){
+                    for(int j=0;j<8;j++){
+                        printf("%d ",cheese[i][j]);
+                    }
+                    printf("\n");
+                }
+                printf("棋盤結束\n");
+                int b=0;
+                int w=0;
+                for(int i=0;i<8;i++){
+                    for(int j=0;j<8;j++){
+                        if(cheese[i][j]==1){
+                            b++;
+                        }
+                        else if(cheese[i][j]==2){
+                            w++;
+                        }
+                    }
+                }
+                if(b>w){
+                    printf("黑棋 : %d\n白棋 : %d \n黑棋贏",b,w);
+                    return 0;
+                }
+                else if(w>b){
+                    printf("黑棋 : %d\n白棋 : %d \n白棋贏",b,w);
+                    return 0;
+                }
+                else if(w=b){
+                    printf("黑棋 : %d\n白棋 : %d \n平手",b,w);
+                    return 0;
+                }
+            }
+        }
+    }
+}
