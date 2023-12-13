@@ -1,0 +1,35 @@
+#include "magic.h"
+
+void init(Stack *s){
+    s->top=-1;
+}
+int empty(Stack *s)
+{
+    if (s->top==-1)return 1;
+    else return 0;
+}
+int full(Stack *s)
+{
+    if(s->top==MAX_SIZE-1)return s->top==1;
+    else return 0;
+}
+void push(Stack *s,int value)
+{
+    if(full(s)){
+    }
+    else{
+        s->top++;
+        s->items[s->top]=value;
+    }
+}
+int pop(Stack *s)
+{
+    if(empty(s)){
+        return -1;
+    }
+    else{
+        int popped = s->items[s->top];
+        s->top--;
+        return popped;
+    }
+}
