@@ -1,0 +1,15 @@
+#include stdio.h
+#include string.h
+int main ()
+{
+    char str[50]="ABCDEF";
+    char str2[50]="abcdef";
+    int x=memcmp(str,str2,1);
+    if(x0)printf(strstr2);
+    else if(x0)printf(strstr2);
+    else printf(str=str2);
+}
+memcmp(const void *x,const void *y,size_t n)此函數判斷x和y的第n個字節，如果x>y則返回值>0，如果x<y則返回值<0，如果x=y則返回值=0。
+上述程式判斷str跟str2的第1個字節，str2的第一個字節較大，則返回值<0。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-memcmp.html

@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char str[50]="ABCDEF";
+    int x=strlen(str);
+    printf("%d",x);
+}
+strlen(const char *x)此函是計算x字符串有幾個字(遇到結束字符的時候停止)並返回值。
+上述程式判斷str字符串有幾個字並存取到x內，並印出x的值。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strlen.html
