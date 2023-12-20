@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main ()
+{
+    int x='1';
+    int c=' ';
+    if(isspace(x))printf("[%c]為空白字符\n",x);
+    else printf("[%c]不是空白字符\n",x);
+    if(isspace(c))printf("[%c]為空白字符\n",c);
+    else printf("[%c]不是空白字符\n",c);
+}
+isspace(int x)此函數判斷x、c是否為空白字符，是的話返回非0,不是的話則返回0
+上面程式判斷x、c是否為空白字符，是的話印出 x、c為空白字符，不是的話則印出x、c不是空白字符。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-isspace.html

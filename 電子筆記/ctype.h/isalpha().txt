@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main ()
+{
+    int x='1';
+    int c='A';
+    if(isalpha(x))printf("[%c]為字母\n",x);
+    else printf("[%c]不是字母\n",x);
+    if(isalpha(c))printf("[%c]為字母\n",c);
+    else printf("[%c]不是字母\n",c);
+}
+isalpha(int x)此函數判斷x、c是否為字母，是的話返回非0,不是的話則返回0
+上面程式判斷x、c是否為字母，是的話印出 x、c為字母，不是的話則印出x、c不是字母。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-isalpha.html
