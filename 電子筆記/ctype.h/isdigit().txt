@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main ()
+{
+    int x='1';
+    int c='A';
+    if(isdigit(x))printf("[%c]為數字\n",x);
+    else printf("[%c]不是數字\n",x);
+    if(isdigit(c))printf("[%c]為數字\n",c);
+    else printf("[%c]不是數字\n",c);
+}
+isspace(x)此函數判斷x、c是否為數字，是的話返回非0,不是的話則返回0
+上面程式判斷x、c是否為數字，是的話印出 x、c為數字，不是的話則印出x、c不是數字。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-isdigit.html
