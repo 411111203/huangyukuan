@@ -1,0 +1,4 @@
+typedef signed integer type intptr_t;    
+typedef unsigned integer type uintptr_t; 
+
+用於在不同平台上表示指標的整數類型
