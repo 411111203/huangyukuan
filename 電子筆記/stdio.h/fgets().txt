@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    char str[50];
+    fgets(str, sizeof(str), stdin);
+    printf("You entered: %s", str);
+    return 0;
+}
+
+fgets()函數是從指定的流中讀取一行並存取在str字串中
+stdin代表標準輸入。
+sizeof(str)會回傳50，這個值表示str可以容納50個char類型的元素
+
+上面的程式是讀取輸入著輸入的內容然後print出來一個字符串。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fgets.html
