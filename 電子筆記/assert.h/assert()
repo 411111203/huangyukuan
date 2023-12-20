@@ -11,3 +11,5 @@ int main()
 }
 assert(int x)此函數用於判斷x為ture還是false，ture則不執行任何動作，false則顯示錯誤的原因且終止程序執行。
 上述程式為輸入一個正整數，用assert(a>=10)判斷輸入的整數是否大於等於10，大於等於10則不執行任何動作，小於10則顯示錯誤的原因並終止程序執行。
+
+參考資料:https://www.runoob.com/cprogramming/c-macro-assert.html
