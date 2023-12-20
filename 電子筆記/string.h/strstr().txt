@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char str[50]="ABCDEF";
+    char str2[50]="ABC";
+    printf("str字符串中符合str2字串的起始位置=%d",strstr(str,str2));
+}
+strstr(x,y)是找尋x字符串中符合y字串的起始位置，並返回位置。
+上述程式是計算出str字符串中符合str2字串的起始位置。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strstr.html
