@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+    printf("-10的正整數為=%lf",fabs(-10));
+}
+fabs(double x)此函數回傳x的正數
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fabs.html

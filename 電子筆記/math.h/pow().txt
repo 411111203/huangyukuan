@@ -1,0 +1,7 @@
+#include<stdio.h>
+#include<math.h>
+int main ()
+{
+    printf("2的4次方= %lf",pow(2,4));
+}
+pow(double x,double y)此函數是回傳x的y平方是多少。

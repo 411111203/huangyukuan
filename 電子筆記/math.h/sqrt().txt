@@ -1,0 +1,9 @@
+#include <math.h>
+
+int main() {
+    float x = 25;
+    printf("平方根：%f\n", sqrt(x));
+}
+
+sqrt()這函數在計算一個數的平方根
+上面程式的功能是在計算我們輸入數字的平方根等於多少。

@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+   printf("10除以7的餘數 = %lf", fmod(10,7));
+}
+fmod(double x, double y)此函數返回x除以y的餘數
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fmod.html
