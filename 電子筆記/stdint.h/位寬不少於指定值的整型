@@ -7,5 +7,5 @@ typedef unsigned integer type uint_least16_t;
 typedef unsigned integer type uint_least32_t;
 typedef unsigned integer type uint_least64_t;
 
-定義了最小寬度的有符號整數類型，和最小寬度的無符號整數類型。
+定義了最小寬度的有符號整數類型（8、16、32、64 位），和最小寬度的無符號整數類型（8、16、32、64 位）。
 資料來源:https://zh.wikipedia.org/zh-tw/Stdint.h
