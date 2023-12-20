@@ -1,0 +1,10 @@
+typedef signed integer type int8_t;     
+typedef signed integer type int16_t;    
+typedef signed integer type int32_t;    
+typedef signed integer type int64_t;    
+typedef unsigned integer type uint8_t;  
+typedef unsigned integer type uint16_t; 
+typedef unsigned integer type uint32_t; 
+typedef unsigned integer type uint64_t; 
+
+定義了固定寬度的有符號數正整數類型(8、16、32、64 位)，和固定寬度的無符號數正整數類型(8、16、32、64 位)
