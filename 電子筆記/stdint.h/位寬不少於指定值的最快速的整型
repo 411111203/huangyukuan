@@ -7,5 +7,5 @@ typedef unsigned integer type uint_fast16_t;
 typedef unsigned integer type uint_fast32_t;
 typedef unsigned integer type uint_fast64_t;
 
-
 定義了快速整數類型，和快速無符號整數類型。
+資料來源:https://zh.wikipedia.org/zh-tw/Stdint.h
