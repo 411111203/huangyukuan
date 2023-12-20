@@ -1,0 +1,13 @@
+#include <assert.h>
+#include <stdio.h>
+
+int main()
+{
+   int a;
+   printf("請輸入一個整數值： ");
+   scanf("%d", &a);
+   assert(a >= 10);
+   printf("輸入的整數值為:%d",a);
+}
+assert(int x)此函數用於判斷x為ture還是false，ture則不執行任何動作，false則顯示錯誤的原因且終止程序執行。
+上述程式為輸入一個正整數，用assert(a>=10)判斷輸入的整數是否大於等於10，大於等於10則不執行任何動作，小於10則顯示錯誤的原因並終止程序執行。
