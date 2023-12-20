@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main ()
+{
+   char c;
+   c = getchar();
+   printf("輸入的字符為 : %c",c);
+}
+
+getchar()此函數從標準輸入獲取一個字符
+上面的函數是用c存取getchar()獲取到的字符然後印出。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-getchar.html

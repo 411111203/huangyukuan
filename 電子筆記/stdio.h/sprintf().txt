@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[80];
+    int x;
+    x=sprintf(str, "hello %s", "world");
+    printf("%d",x);
+}
+
+
+sprintf()這函數是將格式化的字符串"hello %s"存到str中，並返回str的字符總數，但不包含結尾符號'\0'。
+%s跟後面的"world"，則代表的是你要以什麼形式存取"world"，這邊是用%s的方式存取到str中。
+上的的程式是算字符的總數，x=11。
+
+參考:https://www.runoob.com/cprogramming/c-function-sprintf.html
