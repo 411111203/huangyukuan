@@ -1,0 +1,6 @@
+typedef unsigned integer type uintmax_t;
+typedef signed integer type intmax_t;
+
+定義了最大寬度的有符號整數類型，和最大寬度的無符號整數類型。
+
+資料來源:https://zh.wikipedia.org/zh-tw/Stdint.h
