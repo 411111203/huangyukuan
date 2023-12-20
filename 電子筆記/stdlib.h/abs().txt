@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+    int x=-10;
+    int y=abs(x);
+    printf("%d",y);
+}
+abs(int x)此函數是將x轉換成正整數。
+上述程式是將x轉換成正整數後存入y中並印出。

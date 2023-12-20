@@ -1,0 +1,14 @@
+#include stdio.h
+#include stdlib.h
+
+int main ()
+{
+    div_t x;
+    x=div(10,3);
+    printf(10除以3的商=%dn,x.quot);
+    printf(10除以3的餘數=%dn,x.rem);
+}
+div(int x,int y)此函數會返回定義在<cstdlib>中結構的值，該結構有兩個變數，int quot(商)和int rem(餘數)
+上述程式是建立一個div_t的結構名為x,div(10,3)的返回值存在x.quot和x.rem，並印出商和餘數的值。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-div.html

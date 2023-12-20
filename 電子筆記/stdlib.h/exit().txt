@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+    printf("Hello");
+    exit(0);
+    printf("world");
+}
+exit(int x)此函數用於終止程式執行，x為返回狀態代碼，0為正常退出。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-exit.html
