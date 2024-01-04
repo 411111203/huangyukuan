@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+int main ()
+{
+    char str[]="abcdefg";
+    int x=strlen(str);
+    for(int i=0;i<x;i++){
+        str[i]=toupper(str[i]);
+        printf("%c",str[i]);
+    }
+}
+
+tolower(int x)此函數會將x字母轉換成大寫字母(如果x為小寫字母的話)
+上面的程式是把str字串裡的所有小寫字母轉換成大寫字母，並印出。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-toupper.html

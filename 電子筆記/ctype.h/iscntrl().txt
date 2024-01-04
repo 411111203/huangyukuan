@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<ctype.h>
+
+
+int main()
+{
+    int i=0,j=0;
+    char str[]="Hello \n World";
+    char str2[]="World! \a hello";
+    while(!iscntrl(str[i])){
+        printf("%c",str[i]);
+        i++;
+    }
+    while(!iscntrl(str2[j])){
+        printf("%c",str2[j]);
+        j++;
+    }
+}
+
+int iscntrl(int c) 當遇到控制子符時會回傳非0值。
+上述程式是在顯示str跟str2，當遇到控制字符(例如:\a、\n)時停止迴圈
+
+參考資料:https://www.runoob.com/cprogramming/c-function-iscntrl.html

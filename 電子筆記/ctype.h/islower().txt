@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<ctype.h>
+
+
+int main()
+{
+    int x[5]={'Q','q','a','A','3'};
+    for(int i=0;i<5;i++){
+        if(islower(x[i])){
+            printf("是小寫字母[%c]\n",x[i]);
+        }
+        else{
+            printf("不是小寫字母[%c]\n",x[i]);
+        }
+    }
+}
+int islower(int c)是判斷c是否為小寫字母，是的話返回非0值，反之返回0;
+上述程式是判斷x[5]裡面的數值是否為小寫字母。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-islower.html

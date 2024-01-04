@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<ctype.h>
+
+
+int main()
+{
+    int x[5]={'3','a','\a','\n',' '};
+    for(int i=0;i<5;i++){
+        if(isgraph(x[i])){
+            printf("可打印[%c]\n",x[i]);
+        }
+        else{
+            printf("不可打印\n");
+        }
+    }
+}
+int isgraph(int c) 如果c為圖形表示法，則返回非0，反之返回0。
+上述程式是在檢查x[5]，遇到可打印的則印出可打印，遇到圖形表示法則打印不可打印。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-isgraph.html
