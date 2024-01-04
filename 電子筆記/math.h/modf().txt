@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+   double x=15.5665,y,z;
+   y=modf(x,&z);
+   printf("x=%lf\n整數部分=%lf\n小數部分=%lf ",x,z,y);
+}
+double modf(double x, double *integer) 此函數會把整數跟小數點分開，返回值為小數，然後把整數的部分存在指標integer所指向的位置
+上述函數是把x分解成整數和小數，並把小數存在y，整數存在z，並印出。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-modf.html

@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+int main ()
+{
+   double x,val;
+   x=60;
+   val=cos(x*PI/180);
+
+   printf("x度的餘弦值為%lf",val);
+}
+double cos(double x) 轉換x度的餘弦值。
+上述程式是先把x度轉換成弧度之後用cos函數轉換成該角度的餘弦值。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-cos.html

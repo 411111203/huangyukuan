@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+   double x=2;
+   int n=5;
+   printf("%lf * 2^%d=%lf",x,n,ldexp(x,n));
+}
+double ldexp(double x, int exponent) 返回x*2^n的值。
+上述程式是在計算 x*2^n的值為多少並印出來。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-ldexp.html

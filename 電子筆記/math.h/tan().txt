@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+int main ()
+{
+   double x,val;
+   x=45;
+   val=tan(x*PI/180);
+
+   printf("x度的正切值為%lf",val);
+}
+
+double tan(double x) 轉換x度的正切值。
+上述程式是先把x度轉換成弧度之後用tan函數轉換成該角度的正切值。

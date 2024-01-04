@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+int main ()
+{
+   double x;
+   x=1.5;
+   printf("x的雙曲正弦值為%lf",sinh(x));
+}
+double sinh(double x) 返回x的雙曲正弦值。
+上述程式是將x的雙曲正弦值打印出來。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-sinh.html

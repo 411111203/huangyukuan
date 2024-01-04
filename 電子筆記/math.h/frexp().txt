@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+   double x = 1024, y;
+   int e;
+   y = frexp(x, &e);
+   printf("%.2lf = %.2lf * 2^%d\n", x, y, e);
+}
+double frexp(double x, int *exponent)此函數會把x的值拆解成尾數和指數，尾數的部分為返回值，且尾數為0.5<|尾數|<1.0的浮點數，然後將x的二進制表示的指數儲存在指標exponent所指向的位置。
+上述程式是在拆解x=1024這個值，返回值存在y，指數存在e，然後印出1024的拆解。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-frexp.html

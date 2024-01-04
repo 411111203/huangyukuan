@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+int main ()
+{
+   double x;
+   x=1.0;
+   printf("x的反正弦度數為%lf度",atan(x)*180/PI);
+}
+double atan(double x) 返回x的反正切(x為弧度表示)。
+上面程式是在算出x的反正切度數。
+
+參考程式:https://www.runoob.com/cprogramming/c-function-atan.html

@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+   double x = 1;
+
+   printf("e 的 1 次方為%lf\n", x, exp(x));
+}
+double exp(double x) 返回e的x次方
+上述程式是顯示e的1次方為多少。
+
+參考程式:https://www.runoob.com/cprogramming/c-function-exp.html

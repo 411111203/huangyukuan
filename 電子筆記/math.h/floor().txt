@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+    double x[5]={1.6,2.5,1.8,0.5,0.4};
+    for(int i=0;i<5;i++){
+        printf("%lf\n",floor(x[i]));
+    }
+}
+double floor(double x) 此函數會返回一個不大於x的最大整數。
+上述程式是在印出不大於x[i]的最大整數。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-floor.html
