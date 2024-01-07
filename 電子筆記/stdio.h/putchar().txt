@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char ch;
+    for(ch='1';ch<='9';ch++)putchar(ch);
+}
+int putchar(int char)此函數把char寫入到標準輸出stdout中。
+上述的程式是用putchar()函數一一將ch字符寫入到標準輸出stdout中。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-putchar.html

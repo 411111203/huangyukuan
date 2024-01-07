@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   char arr[20];
+   char *s="Hello World";
+   int j=snprintf(arr,20,"%s",s);
+   printf("複製後的字串[%s]，字符總數[%d]",arr,j);
+}
+int snprintf ( char * str, size_t size, const char * format, ... )可變參數(...)按照format格式化成字符串並複製到str中，
+size為可寫入的最大數目，超過size會回傳-1，表示沒有全部複製過去，如果全部複製過去的話，則會回傳字符的總數(不包含結尾符)。
+上述程式是將s字串複製到arr中並回傳該串的字符數，然後印出arr字串和字符總數。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-snprintf.html

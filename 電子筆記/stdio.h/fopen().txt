@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main ()
+{
+   FILE *fp;
+   fp=fopen("file.txt","w+");
+   fprintf(fp,"%s","Hello World!");
+   fclose(fp);
+}
+FILE *fopen(const char *filename, const char *mode)此函數是使用特定的mode打開 filename所指向的文件。
+上述程式是以"w+"的模式打開file.txt文件，並輸入Hello World!字串。
+
+"r"	打开一个用于读取的文件。该文件必须存在。
+"w"	创建一个用于写入的空文件。如果文件名称与已存在的文件相同，则会删除已有文件的内容，文件被视为一个新的空文件。
+"a"	追加到一个文件。写操作向文件末尾追加数据。如果文件不存在，则创建文件。
+"r+"	打开一个用于更新的文件，可读取也可写入。该文件必须存在。
+"w+"	创建一个用于读写的空文件。
+"a+"	打开一个用于读取和追加的文件。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fopen.html

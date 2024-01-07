@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   char c[50];
+   gets(c);
+   printf("%s",c);
+}
+char *gets(char *str)此函數從stdin流讀取一行字串，並存取再str所指向的字符串中，當遇到換行符、結尾符則會停止。
+上述程式是從stdin流(使用者輸入的流)讀取一行字串，並存取再c字串裡面，並印出。

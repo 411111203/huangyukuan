@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    FILE *fp;
+    fp=fopen("file.txt","w");
+    fprintf(fp,"%s","Hello World!");
+    fclose(fp);
+
+}
+int fclose(FILE *stream)此函數會關閉檔案，並清空所有緩衝區。
+上述程式是在建立一個file的記事本，然後輸入"Hello World"在記事本裡面，並用fclose(fp)關閉記事本。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fclose.html

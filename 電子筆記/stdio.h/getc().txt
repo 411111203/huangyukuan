@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   char c;
+   c=getc(stdin);
+   printf("%c",c);
+}
+int getc(FILE *stream) 此函數從指定流stream獲取下一個字符，並把位置標誌往前移動一格。
+上述程式是先輸入字符，然後用getc()函數從stdin流獲取我們輸入的字符，並印出。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-getc.html

@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   char arr[20]="Hello World!";
+   puts(arr);
+}
+int puts(const char *str)此函數把一個字符串寫入到標準輸出stdout。
+上述程式是將arr字串寫入到標準輸出stdout中。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-puts.html

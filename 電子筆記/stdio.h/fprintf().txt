@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   FILE * fp;
+   fp = fopen ("file.txt", "w+");
+   fprintf(fp, "%s %s %s %s %d", "He", "llo", " Wor", "ld!",2024);
+   fclose(fp);
+   return(0);
+}
+int fprintf(FILE *stream, const char *format, ...)此函數是將格式化輸入到流stream中。
+上述程式先線建立一個可讀寫的文件，之後用fprintf()函數將"He","llo","Wor","ld!",2024以特定格是輸出到fp檔案流。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fprintf.html

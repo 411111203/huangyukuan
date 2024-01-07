@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main ()
+{
+   FILE *fp;
+   char str[]="Hello World!";
+   fpos_t pos;
+   fp=fopen("file.txt","w+");
+   fwrite(str,sizeof(str),sizeof(char),fp);
+   fclose(fp);
+   int ret=remove("file.txt");
+   if(ret==0)printf("文件已刪除");
+   else printf("文件未被刪除");
+}
+int remove(const char *filename)刪除filename的文件，成功的話返回0，反之則返回-1。
+上述程式是先建立一個可讀寫的文件和建立一個字串，然後用fwrite()函數把str字串寫入檔案流fp中，
+之後關掉檔案，用remove()函數刪除file.txt檔案。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-remove.html

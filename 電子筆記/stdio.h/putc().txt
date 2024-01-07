@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   FILE *fp;
+   fp=fopen("file.txt","w+");
+   for(int i=0;i<100;i++)putc(i,fp);
+   fclose(fp);
+}
+int putc(int char, FILE *stream)此函數會把char指定的字符寫入到指定流stream中，並把位置標誌往前移動一格。
+上述程式是先建立一個可讀寫得文件，並用putc()將"i"的值轉換成ASCII字元後，一一填入到fp檔案流中。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-putc.html

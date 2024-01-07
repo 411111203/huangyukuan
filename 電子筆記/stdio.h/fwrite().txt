@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main ()
+{
+   FILE *fp;
+   char str[]="Hello World!";
+   fp=fopen("file.txt","w+");
+   fwrite(str,sizeof(str),sizeof(char),fp);
+   fclose(fp);
+}
+size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream)此函數是把ptr所指向的數組數據寫入到給定流stream中。
+上述程式是先建立一個可讀寫的文件和建立一個字串，然後用fwrite()函數把str字串寫入檔案流fp中。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fwrite.html

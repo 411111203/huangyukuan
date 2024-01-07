@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main ()
+{
+   FILE *fp;
+   int c;
+
+   fp = fopen("file.txt","r");
+   if(fp == NULL)
+   {
+      perror("打開檔案時發生錯誤");
+      return(0);
+   }
+   while(1)
+   {
+      c = fgetc(fp);
+      if( feof(fp) )
+      {
+          break ;
+      }
+      printf("%c", c);
+   }
+   fclose(fp);
+   return(0);
+}
+int fgetc(FILE *stream)此函數從指定的流stream得到一個字符，並把位置標誌往前一格。
+上述程式是用fgetc()函數一個一個的抓取文件中的字符，然後在印出字符，
+然後當檔案的字符遇到了結束標誌的時候，則會跳出迴圈，然後關閉檔案。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fgetc.html

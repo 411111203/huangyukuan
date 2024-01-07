@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main ()
+{
+   FILE *fp;
+   int c;
+
+   fp = fopen("file.txt","r");
+   if(fp == NULL)
+   {
+      perror("打開檔案時發生錯誤");
+      return(0);
+   }
+   while(1)
+   {
+      c = fgetc(fp);
+      if( feof(fp) )
+      {
+          break ;
+      }
+      printf("%c", c);
+   }
+   fclose(fp);
+   return(0);
+}
+void perror(const char *str)此函數會先輸出字串str、冒號接著空格，然後把一個描述性錯誤消息輸出到標準錯誤stderr。
+上述程式是在印出檔案中的字符，如果開始檔案的時候出現錯誤則會印出("打開檔案時發生錯誤: No such file or directory");，
+然後當檔案的字符遇到了結束標誌的時候，則會跳出迴圈，然後關閉檔案。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-perror.html

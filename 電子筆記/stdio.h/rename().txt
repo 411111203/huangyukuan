@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main ()
+{
+   char name[]="file.txt";
+   char name2[]="newfile.txt";
+   int ret=rename(name,name2);
+   if(ret == 0){
+        printf("success");
+   }
+   else{
+        printf("fail");
+   }
+}
+int rename(const char *old_filename, const char *new_filename)此函數會把old_filename所指向的文件改名成new_filenam，成功的話返回零，反之返回-1。
+上述程式是在改變name文件名的名字，如果成功的話印出"success"，失敗的話印出"fail"。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-rename.html

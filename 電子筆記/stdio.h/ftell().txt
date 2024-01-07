@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main ()
+{
+   FILE *fp;
+   fpos_t pos;
+   fp=fopen("file.txt","w+");
+   fputs("Hello World!", fp);
+   int len=ftell(fp);
+   printf("%d",len);
+   fclose(fp);
+}
+long int ftell(FILE *stream)返回給定流stream的當前位置。
+上述程式是打開新的讀寫文件，然後寫入Hello World!，然後用ftell獲取當前位置並存取在len，然後印出(代表有幾個字節)。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-ftell.html

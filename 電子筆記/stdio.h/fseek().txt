@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main ()
+{
+   FILE *fp;
+   fp=fopen("file.txt","w+");
+   fprintf(fp,"%s","Hello World!");
+   char arr[20];
+   fseek(fp, 0, SEEK_SET);
+   fread(arr,12,sizeof(char),fp);
+   printf("%s",arr);
+}
+int fseek(FILE *stream, long int offset, int whence)此函數是設定流stream的文件位置從whence(文件某個位置)加上offset(偏移數)開始。
+上述程式是開啟一個新的讀寫空文件，並在空文件內寫上Hello World!，然後用fseek()重置指標指到文件的開頭(SEEK_SET)加上偏移數(0)的位置，
+然後再用fread()將文件中的數據讀取到arr中，並印出arr。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fseek.html

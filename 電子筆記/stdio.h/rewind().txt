@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main ()
+{
+   FILE *fp;
+   int c;
+   char str[]="Hello World!";
+   fp = fopen( "file.txt" , "w" );
+   fwrite(str , sizeof(str) , sizeof(char) , fp );
+   fclose(fp);
+   fp = fopen("file.txt","r");
+   if(fp == NULL)
+   {
+      perror("打開檔案時發生錯誤");
+      return(0);
+   }
+   while(1)
+   {
+      c = fgetc(fp);
+      if( feof(fp) )
+      {
+          break ;
+      }
+      printf("%c", c);
+   }
+   rewind(fp);
+   printf("\n");
+   while(1)
+   {
+      c = fgetc(fp);
+      if( feof(fp) )
+      {
+          break ;
+      }
+      printf("%c", c);
+   }
+   fclose(fp);
+   return(0);
+}
+void rewind(FILE *stream)此函數會將給定流stream的位置設定為文件開頭的位置。
+上述程式是先開啟file.exe的當案並寫入字串後，關閉檔案，再用讀取的模式打開檔案，並一一印出文件中的字符，
+之後用rewind()函數回到文件開頭的位置，再印出一次，然後關閉檔案。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-rewind.html 

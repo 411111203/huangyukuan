@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   FILE *fp;
+   fp=fopen("file.txt","w+");
+   fputs("Hello",fp);
+   fputs(" World!",fp);
+   fclose(fp);
+}
+int fputs(const char *str, FILE *stream)此函數是把字符串寫入到指定流stream中。
+上述程式是先建立一個可讀寫的文件，並用fputs()函數將字串寫入到fp檔案流中。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-fputs.html

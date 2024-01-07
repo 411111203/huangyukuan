@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+   FILE *fp;
+   char c;
+   fp = fopen("file.txt", "w");
+   c = fgetc(fp);
+   if( ferror(fp) )
+   {
+      printf("讀取file.txt錯誤 \n");
+   }
+   clearerr(fp);
+   if( ferror(fp) )
+   {
+      printf("讀取file.txt錯誤\n");
+   }
+   fclose(fp);
+}
+int ferror(FILE *stream)此函數是當設置了與流相關的文件遇到了錯誤標誌時，返回非零值，反之返回一個零值。
+上述程式，由於我開啟了一份檔案，但我還沒寫入，就用了fgetc()的函數所以導致在檔案流中出現錯誤標誌
+所以當我是用ferror(fp)的時候就會返回非0值，就會印出("讀取file.txt錯誤 \n");，之後我用了clearerr()清理了檔案流中的錯誤標誌，
+在使用ferror(fp)時就不會返回非0值了。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-ferror.html
