@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+    char str[50]="1234567 Hello";
+    char *pos;
+    printf("數字 %lf\n",strtod(str,&pos));
+    printf("字符%s",pos);
+}
+
+
+double strtod(const char *str, char **endptr) 此函數會將字串內的數字轉換成整數(double的形式)並返回，然後將數字後的那個個位置傳到endptr指標所指向的位置。
+上述程式是將str內的數字和字符分別印出。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strtod.html

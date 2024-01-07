@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+    char *a;
+    a=(char*)malloc(5);
+    strcpy(a,"Hello");
+    printf("%s\n",a);
+    a=(char*)realloc(a,25);
+    strcpy(a,"Hello World!");
+    printf("%s",a);
+    free(a);
+}
+void *realloc(void *ptr, size_t size)此函數會把之前用到malloc、calloc所分配到的空間，重新分配size大小的空間。
+上述函數是先用malloc分配5個空間，但太小了，不能呈現我想要的效果，所以我用realloc分配大一點的空間，之後再用free(a)把沒用到的空間釋放出來。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-realloc.html

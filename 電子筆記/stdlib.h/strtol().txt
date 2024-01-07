@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+    char str[50]="1234567 Hello";
+    char *pos;
+    printf("數字%ld\n",strtol(str,&pos,10));
+    printf("字符%s",pos);
+}
+
+long int strtol(const char *str, char **endptr, int base)此函數會將str中的字串以base基數轉換成整數並返回(long int的形式)，假如base=10
+，那就會以10進制印出，但如果不在2~36內，或是字串沒有數字，則會回傳0。
+
+上述程式是將str的字串以10進制轉換成數字然後印出，並將數字後的位置傳入指標pos所指向的位置，並印出。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strtol.html

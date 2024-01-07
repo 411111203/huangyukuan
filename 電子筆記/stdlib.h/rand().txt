@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main ()
+{
+    time_t t;
+    srand((unsigned)time(&t));
+    for(int i=0;i<5;i++)printf("%d\n",rand());
+}
+int rand(void)此函數回返回0~RAND_MAX之間的整數值
+上述程式先設定亂數發射器的程式(srand((unsigned)time(&t));) time(&t)為現在的時間，轉換成unsigned的形式，在印出rand()所產生的隨機數值。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-srand.html

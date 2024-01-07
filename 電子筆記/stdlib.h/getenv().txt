@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+   printf("PATH : %s\n", getenv("PATH"));
+   printf("HOME : %s\n", getenv("HOME"));
+   printf("ROOT : %s\n", getenv("ROOT"));
+}
+char *getenv(const char *name)此函數是用來從環境變數中取得指定名稱的值。
+上述程式是用getenv取得PATH、HOME、ROOT的環境變數並印出來。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-getenv.html

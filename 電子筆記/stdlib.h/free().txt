@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+    int i,n;
+    int *a;
+    scanf("%d",&n);
+    a=(int*)calloc(n,sizeof(int));
+    for(int i=0;i<n;i++)scanf("%d",&a[i]);
+    for(int i=0;i<n;i++)printf("%d ",a[i]);
+    free(a);
+}
+void free(void *ptr)此函數釋放掉我們用calloc、malloc、realloc所分配的內存空間。
+上述程式是，當我們輸入n的時候，會分配n個空間，然後輸入n個數字，之後並一一印出來，然後用free()釋放內存。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-free.html

@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+    long int x=22,y=10;
+    ldiv_t result=ldiv(x,y);
+    printf("商=%ld\n",result.quot);
+    printf("餘=%ld",result.rem);
+}
+
+ldiv_t ldiv(long int numer, long int denom)此函數會將number除以denom，
+並將除完的結果返回到定義在<cstdlib>中的結構的值，該結構有兩個，一個是商long quot，一個是餘long rem。
+
+上述函數是將x除以y，並將商與餘印出。
+
+參考程式:https://www.runoob.com/cprogramming/c-function-ldiv.html

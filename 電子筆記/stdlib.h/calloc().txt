@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+    int i,n;
+    int *a;
+    scanf("%d",&n);
+    a=(int*)calloc(n,sizeof(int));
+    for(int i=0;i<n;i++)scanf("%d",&a[i]);
+    for(int i=0;i<n;i++)printf("%d ",a[i]);
+    free(a);
+}
+void *calloc(size_t nitems, size_t size) 此函數會分配所需要的內存空間，並返回指向他的指標，然後內存空間都設置為0。
+上述程式是，當我們輸入n的時候，會分配n個空間(int的大小)，然後輸入n個數字，之後並一一印出來，free()為釋放內存。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-calloc.html

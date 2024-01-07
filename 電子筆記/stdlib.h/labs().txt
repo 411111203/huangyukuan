@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+    long int x=-10;
+    long int y=abs(x);
+    printf("%ld",y);
+}
+long int labs(long int x)此函數是將x轉換成正整數(long int的形式)。
+上述程式是將x轉換成正整數後存入y中並印出。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-labs.html

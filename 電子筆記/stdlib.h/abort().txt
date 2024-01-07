@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+    char *a;
+    a=(char*)malloc(5);
+    strcpy(a,"Hello");
+    printf("%s\n",a);
+    abort();
+    a=(char*)realloc(a,25);
+    strcpy(a,"Hello World!");
+    printf("%s",a);
+}
+void abort(void)此函是終止程式執行。
+上述程式本來是要重新分配內存空間，但由於abort()中斷程式，所以沒能成功重新分配內存空間。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-abort.html

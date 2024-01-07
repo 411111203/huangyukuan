@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int func(){
+    printf("hello");
+}
+int main ()
+{
+    atexit(func);
+    int a=1;
+    int b=2;
+    printf("%d\n",a+b);
+}
+int atexit(void (*func)(void))此函數會再當程式正常終止時，執行func的函數。
+上述程式，雖然atexit(func)最先執行，但由於atexit只會在程式正常終止時才執行，所以並不會先執行func的函數，而是先印出a+b再執行func的函數。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-atexit.html
