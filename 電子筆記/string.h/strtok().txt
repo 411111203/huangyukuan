@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char arr[50]="Hello.World";
+    char *token;
+    token=strtok(arr,".");
+    while(token!=NULL){
+        printf("%s\n",token);
+        token=strtok(NULL,".");
+    }
+}
+
+char *strtok(char *str, const char *delim)此函數會分解str字串，
+delim為要分隔符號，並返回第一個子字符串，如果沒有符合delim的分隔符號，則返回NULL。
+
+上述程式是分解arr字符串，並用'.'作為分隔符號，第一個印出的是Hello，之後再印出World。
+而第二次使用strtok(NULL,".")則是要接續上一次操作，繼續在arr剩下的字串中尋找分隔符號
+，而不是從字串的開頭尋找。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strtok.html

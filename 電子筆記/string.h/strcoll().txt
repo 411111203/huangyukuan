@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char arr[50]="Hello.World";
+    char ret[50]="World.Hello";
+    int x=strcoll(arr,ret);
+    if(x>0)printf("arr>ret");
+    else if(x<0)printf("arr<ret");
+    else printf("arr=ret");
+}
+int strcoll(const char *str1, const char *str2)此函數基本上跟strcmp差不多，
+但strcmp的比較是使用標準的字典順序(ASCll)，而strcoll是會根據當前的本地化設置來進行比較。
+上述程式是在比較arr和ret第一個字符，顯然'H'<'W'所以，arr<ret。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strcoll.html

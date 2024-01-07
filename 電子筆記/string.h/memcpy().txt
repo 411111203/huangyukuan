@@ -8,7 +8,7 @@ int main ()
     printf("%s",str2);
 }
 
-memcpy(void *x,const void *y,size_t n)此函數是將y字串內容中的n個字節複製到x字串裡。
+memcpy(void *x,const void *y,size_t n)此函數是將儲存區y內容中的n個字節複製到儲存區x裡。
 上面程式是將str中strlen(str)+1個字節複製到str2裡面，並印出str2的字串。
 +1是因為還有字符數標誌也要複製過去。
 

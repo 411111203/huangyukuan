@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char arr[50]="Hello.World";
+    char ret[50]="HWorld.....";
+    int len=strspn(arr,ret);
+    printf("arr字串中第%d個字符不存在於ret中",len+1);
+}
+size_t strspn(const char *str1, const char *str2)此函數會檢查str1字串中第一個不存在於str2字串中的字符下標位置。
+上述程式是檢查arr字串中第幾個字符不存在於ret字串中，並印出。(由於strspn是返回字串下標，所以要在+1)
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strspn.html

@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char arr[50]="Hello.World";
+    char ret[50]="World.Hello";
+    strcpy(arr,ret);
+    printf("%s",arr);
+}
+char *strcpy(char *dest, const char *src)此函數是將src所指向的字符串複製到dest，注意空間要足夠。
+上述程式是將ret的字串複製到arr中，並印出arr。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strcpy.html

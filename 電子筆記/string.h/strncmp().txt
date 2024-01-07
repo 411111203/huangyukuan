@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char arr[50]="Hello.World";
+    char ret[50]="World.Hello";
+    int x=strcmp(arr,ret);
+    if(x>0)printf("arr>ret");
+    else if(x<0)printf("arr<ret");
+    else printf("arr=ret");
+}
+int strncmp(const char *str1, const char *str2, size_t n)此函數會將str1所指向的字符跟str2所指向的字符做比較，
+，總共比較n個字符，大於則返回大餘0的值，小於則返回小餘0的值，如果等於則返回0。
+上述程式是在比較arr和ret第一個字符，顯然'H'<'W'所以，arr<ret。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strncmp.html

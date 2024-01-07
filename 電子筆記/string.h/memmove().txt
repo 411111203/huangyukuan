@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char arr[]="Hello.World";
+    char ret[]="World.Hello";
+    printf("%s\n",arr);
+    memmove(arr,ret,11);
+    printf("%s",arr);
+}
+void *memmove(void *str1, const void *str2, size_t n)此函數是將str2複製n個字符到str1。
+上述程式是先印出原本的arr字串，再用memmove()將ret子串複製11個字符到arr，之後再印出arr。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-memmove.html

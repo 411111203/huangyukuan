@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char arr[50]="Hello.World";
+    char ret[50]="World.Hello";
+    int len=strxfrm(arr,ret,50);
+    printf("[%s]字串長度為%d",arr,len);
+}
+size_t strxfrm(char *dest, const char *src, size_t n)此函數會根據當前設置的區域來轉換src的前n個字符，並儲存在dest，然後返回轉換多少個字符。
+上述程式是將ret轉換後儲存在arr中，並印出arr字串和字串的長度。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strxfrm.html

@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+int main ()
+{
+    char arr[50]="Hello.World";
+    char ret[50]="oW";
+    char *len=strpbrk(arr,ret);
+    printf("第一個符合ret字串內的字符為:%c",*len);
+}
+char *strpbrk(const char *str1, const char *str2)此函數是用來尋找str1字串第一個符合str2字串中的字符的位置，並返回該字符的位置。
+上述程式是用來檢查arr字串中第一個符合ret字串的字符，為'o'。
+
+參考資料:https://www.runoob.com/cprogramming/c-function-strpbrk.html
