@@ -5,7 +5,7 @@ int main ()
     char str[50]="1234567";
     printf("%lf",atof(str));
 }
-atof(const char *x)此函數會將x字符串轉換成整數(int的形式);
+atof(const char *x)此函數會將x字符串轉換成整數(double的形式);
 上述的程式是將str字符串中"1234567"轉換成整數並印出。
 
 參考程式:https://www.runoob.com/cprogramming/c-function-atoi.html
